@@ -25,13 +25,13 @@
                 '<span>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</span>',
                 '<ol>
                     <li>
-                        <p>paragrafo</p>
-                        <ol>
-                            <li>google 1</li>
-                            <li>google 2</li>
+                        <p>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</p>
+                        <ol class="letters-style">
+                            <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell\'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li>
+                            <li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li>
                         </ol>
                     </li>
-                    <li>la versione...</li>
+                    <li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li>
                 </ol>',
                 '<p>Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.</p>',
                 '<h4>Stabilire il paese associato al tuo account</h4>',
@@ -50,7 +50,6 @@
         ]
     ]
 
-    // RICORDATI DI METTERE LE VIRGOLE SOPRA
 ?>
 
 <!DOCTYPE html>
@@ -66,14 +65,37 @@
 
     <!-- HEADER -->
     <header>
+            <div class="header-top">
+                <div>logo</div>
+                <div>icons</div>
+            </div>
 
+            <div class="header-bottom">
+                <ul>
+                    <li><a href="#">Introduzione</a></li>
+                    <li><a href="#">Normesulla privacy</a></li>
+                    <li><a href="#">Termini di servizio</a></li>
+                    <li><a href="#">Tecnologie</a></li>
+                    <li><a class="active" href="#">Domande frequenti</a></li>
+                </ul>
+            </div>
     </header>
 
     
 
     <!-- MAIN -->
     <main>
-        
+        <div class="container">
+            <?php foreach ($faq as $single_question) { ?>
+                <?php echo $single_question['question'] ?>
+
+                <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
+                    <?php echo $single_paragraph ?>
+                <?php } ?>
+
+                <?php var_dump($single_question['answer']) ?>
+            <?php } ?>
+        </div>
     </main>
 
     <!-- FOOTER -->

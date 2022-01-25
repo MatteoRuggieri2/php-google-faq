@@ -5,6 +5,61 @@
     box-sizing: border-box;
 }
 
+/* COMMON */
 ol {
     padding-left: 50px;
+}
+
+p {
+    margin: 30px 0;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+.letters-style {
+    list-style-type: lower-alpha;
+}
+
+/* HEADER */
+header {
+    padding: 10px;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header a.active {
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-bottom {
+    border-bottom: 1px solid grey;
+}
+
+.header-bottom ul {
+    display: flex;
+}
+
+.header-bottom ul li a {
+    margin: 0 20px;
+}
+
+/* MAIN */
+main {
+    padding: 100px 0;
 }
