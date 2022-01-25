@@ -37,7 +37,7 @@
                 '<h4>Stabilire il paese associato al tuo account</h4>',
                 '<p>Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell\'ultimo anno.</p>',
                 '<p>I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l\'associazione del paese.</p>',
-                '<p>Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l\'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. <a href="#">Contattaci<span>--icon--</span></a> se ritieni che il paese associato al tuo account sia sbagliato.</p>'
+                '<p>Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l\'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. <a href="#">Contattaci<span class="link-icon"><i class="fas fa-external-link-alt"></i></span></a> se ritieni che il paese associato al tuo account sia sbagliato.</p>'
             ]
         ],
         [
@@ -74,8 +74,14 @@
     <!-- HEADER -->
     <header>
             <div class="header-top">
-                <div>logo</div>
-                <div>icons</div>
+                <div class="header-top-left">
+                    <span class="logo"></span>         <!-- Da sistemare il tag vuoto -->
+                    <a class="privacy" href="#">Privacy e termini</a>
+                </div>
+                <div>
+                    <span><i class="fas fa-ellipsis-v"></i></span>
+                    <span class="user-img">M</span>
+                </div>
             </div>
 
             <div class="header-bottom">
@@ -99,18 +105,16 @@
                 <div class="single-question">
                     <?php echo $single_question['question'] ?>
 
-                        <!-- Se 'answer' è un array, faccio un ciclo per stampare tutti i paragrafi -->
-                        <?php if(is_array($single_question['answer'])) { ?>
-                            <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
-                                <?php echo $single_paragraph ?>
-                            <?php } ?>
-
-                        <!-- Altrimenti stampo direttamente -->
-                        <?php } else { ?>
-                            <?php echo $single_question['answer'] ?>
+                    <!-- Se 'answer' è un array, faccio un ciclo per stampare tutti i paragrafi -->
+                    <?php if(is_array($single_question['answer'])) { ?>
+                        <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
+                            <?php echo $single_paragraph ?>
                         <?php } ?>
 
-                        <!-- <?php var_dump($single_question['answer']) ?> -->
+                    <!-- Altrimenti stampo direttamente -->
+                    <?php } else { ?>
+                        <?php echo $single_question['answer'] ?>
+                    <?php } ?>
                 </div>
 
             <?php } ?>
@@ -123,16 +127,16 @@
 
             <div class="footer-left">
                 <a href="#">Google</a>
-                <span> . </span>
+                <span class="circle-icon"><i class="fas fa-circle"></i></span>
                 <a href="#">Tutto su Google</a>
-                <span> . </span>
+                <span class="circle-icon"><i class="fas fa-circle"></i></span>
                 <a href="#">Privacy</a>
-                <span> . </span>
+                <span class="circle-icon"><i class="fas fa-circle"></i></span>
                 <a href="#">Termini</a>
             </div>
 
             <div class="footer-right">
-                <span>icon</span>
+                <span class="globe-icon"><i class="fas fa-globe-americas"></i></span>
                 <select id="language-select">
                     <option value="it">Italiano</option>
                     <option value="en">Inglese</option>
