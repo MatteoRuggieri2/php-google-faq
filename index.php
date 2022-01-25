@@ -86,14 +86,23 @@
     <!-- MAIN -->
     <main>
         <div class="container">
+
+            <!-- Per ogni Q&A stampo la domanda  -->
             <?php foreach ($faq as $single_question) { ?>
                 <?php echo $single_question['question'] ?>
 
-                <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
-                    <?php echo $single_paragraph ?>
+                <!-- Se 'answer' è un array, faccio un ciclo per stampare tutti i paragrafi -->
+                <?php if(is_array($single_question['answer'])) { ?>
+                    <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
+                        <?php echo $single_paragraph ?>
+                    <?php } ?>
+
+                <!-- Altrimenti stampo direttamente -->
+                <?php } else { ?>
+                    <?php echo $single_question['answer'] ?>
                 <?php } ?>
 
-                <?php var_dump($single_question['answer']) ?>
+                <!-- <?php var_dump($single_question['answer']) ?> -->
             <?php } ?>
         </div>
     </main>
