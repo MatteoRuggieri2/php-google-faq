@@ -25,7 +25,15 @@ p {
 
 /* HEADER */
 header {
+    width: 100%;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+
+    /* test */
+    border: 3px solid red;
 }
 
 header a {
