@@ -81,7 +81,7 @@
             <div class="header-bottom">
                 <ul>
                     <li><a href="#">Introduzione</a></li>
-                    <li><a href="#">Normesulla privacy</a></li>
+                    <li><a href="#">Norme sulla privacy</a></li>
                     <li><a href="#">Termini di servizio</a></li>
                     <li><a href="#">Tecnologie</a></li>
                     <li><a class="active" href="#">Domande frequenti</a></li>
@@ -89,35 +89,58 @@
             </div>
     </header>
 
-    
-
     <!-- MAIN -->
     <main>
         <div class="container">
 
             <!-- Per ogni Q&A stampo la domanda  -->
             <?php foreach ($faq as $single_question) { ?>
-                <?php echo $single_question['question'] ?>
 
-                <!-- Se 'answer' è un array, faccio un ciclo per stampare tutti i paragrafi -->
-                <?php if(is_array($single_question['answer'])) { ?>
-                    <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
-                        <?php echo $single_paragraph ?>
-                    <?php } ?>
+                <div class="single-question">
+                    <?php echo $single_question['question'] ?>
 
-                <!-- Altrimenti stampo direttamente -->
-                <?php } else { ?>
-                    <?php echo $single_question['answer'] ?>
-                <?php } ?>
+                        <!-- Se 'answer' è un array, faccio un ciclo per stampare tutti i paragrafi -->
+                        <?php if(is_array($single_question['answer'])) { ?>
+                            <?php foreach ($single_question['answer'] as $single_paragraph) { ?>
+                                <?php echo $single_paragraph ?>
+                            <?php } ?>
 
-                <!-- <?php var_dump($single_question['answer']) ?> -->
+                        <!-- Altrimenti stampo direttamente -->
+                        <?php } else { ?>
+                            <?php echo $single_question['answer'] ?>
+                        <?php } ?>
+
+                        <!-- <?php var_dump($single_question['answer']) ?> -->
+                </div>
+
             <?php } ?>
         </div>
     </main>
 
     <!-- FOOTER -->
     <footer>
+        <div class="container">
 
+            <div class="footer-left">
+                <a href="#">Google</a>
+                <span> . </span>
+                <a href="#">Tutto su Google</a>
+                <span> . </span>
+                <a href="#">Privacy</a>
+                <span> . </span>
+                <a href="#">Termini</a>
+            </div>
+
+            <div class="footer-right">
+                <span>icon</span>
+                <select id="language-select">
+                    <option value="it">Italiano</option>
+                    <option value="en">Inglese</option>
+                    <option value="fr">Francese</option>
+                </select>
+            </div>
+
+        </div>
     </footer>
 </body>
 </html>
