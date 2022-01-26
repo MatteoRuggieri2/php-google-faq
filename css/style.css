@@ -144,6 +144,7 @@ main {
     color: #3c4043;
 }
 
+main ol li,
 .single-question p {
     font-size: 14px;
     line-height: 24px;
